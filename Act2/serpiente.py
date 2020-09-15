@@ -2,13 +2,18 @@ from turtle import *
 import random
 from random import randrange
 from freegames import square, vector
+import random
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-colors_list = ["green","yellow","blue","black","red"]
+
+colors_list = ["green","yellow","blue","black","pink","purple", "orange"]
 snake_color = colors_list[random.randint(0,len(colors_list)-1)]
 food_color = colors_list[random.randint(0,len(colors_list)-1)]
+
+while snake_color==food_color:
+    food_color = colors_list[random.randint(0,len(colors_list)-1)]
 
 def change(x, y):
     "Change snake direction."
