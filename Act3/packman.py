@@ -109,6 +109,7 @@ def move():
         square(x, y)
 
     up()
+    # picition of packamn in game
     goto(pacman.x + 10, pacman.y + 10)
     dot(20, 'yellow')
 
@@ -117,10 +118,10 @@ def move():
             point.move(course)
         else:
             options = [
-                vector(5, 0),
-                vector(-5, 0),
-                vector(0, 5),
-                vector(0, -5),
+                vector(8, 0),
+                vector(-8, 0),
+                vector(0, 8),
+                vector(0, -8),
             ]
             plan = choice(options)
             course.x = plan.x
@@ -136,7 +137,7 @@ def move():
         if abs(pacman - point) < 20:
             return
 
-    ontimer(move, 20)
+    ontimer(move, 70)
 
 def change(x, y):
     "Change pacman aim if valid."
